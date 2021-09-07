@@ -1,0 +1,9 @@
+$img: "https://www.incimages.com/uploaded_files/image/1920x1080/getty_520700958_364534.jpg";
+
+.slider-bg {
+    background-image: url($img);
+    min-height: 80vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
