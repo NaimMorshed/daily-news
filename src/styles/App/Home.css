@@ -3,6 +3,17 @@
   min-height: 80vh;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: 100%;
+  -webkit-box-shadow: inset 0 0 0 2000px #151d2263;
+          box-shadow: inset 0 0 0 2000px #151d2263;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.slider-bg:hover {
+  -webkit-box-shadow: inset 0 0 0 2000px #030405a2;
+          box-shadow: inset 0 0 0 2000px #030405a2;
+  background-size: 110%;
+  cursor: pointer;
 }
 /*# sourceMappingURL=Home.css.map */
