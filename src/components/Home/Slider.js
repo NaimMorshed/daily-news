@@ -3,13 +3,15 @@ import React from 'react';
 const Slider = () => {
     return (
         <div className="slider-bg text-white flex">
-
-            <section className="relative top-20 left-20">
-                <Category />
-                <Heading />
-                <Body />
-                <br />
-                <Author />
+            <section className="flex flex-col relative top-20 left-20">
+                <div className="slider-1 flex-5">
+                    <Category />
+                    <Heading />
+                    <Body />
+                </div>
+                <div className="slider-2">
+                    <Author />
+                </div>
             </section>
 
             <section className="flex">
@@ -43,6 +45,13 @@ const Author = () => {
                 <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clipRule="evenodd" />
             </svg>
             <h5>Lisa Scholfield</h5>
+
+            <div className="flex justify-center ml-10">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                <p>10 September, 2021</p>
+            </div>
         </div>
     );
 }

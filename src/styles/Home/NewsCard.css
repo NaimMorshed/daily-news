@@ -1,0 +1,61 @@
+.square-card {
+  width: 280px;
+  background-color: white;
+}
+
+.square-card img {
+  width: 280px;
+  height: 150px;
+}
+
+.square-card h2 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.rectangle-card {
+  width: 100%;
+  height: 180px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: white;
+}
+
+.rectangle-card img {
+  width: 280px;
+  height: 180px;
+}
+
+.rectangle-card h2 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.box-card {
+  width: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: white;
+}
+
+.box-card img {
+  width: 180px;
+  height: 180px;
+}
+
+.box-card h2 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.tag {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 14px;
+  color: white;
+  padding: 5px 10px;
+}
+/*# sourceMappingURL=NewsCard.css.map */
