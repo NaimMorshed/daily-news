@@ -1,5 +1,6 @@
 .square-card {
     width: 280px;
+    height: 300px;
     background-color: white;
     img {
         width: 280px;
@@ -8,6 +9,15 @@
     h2 {
         font-size: 18px;
         font-weight: 500;
+    }
+    .sec-1 {
+        flex: 1;
+    }
+    .sec-2 {
+        flex: 2;
+    }
+    .sec-3 {
+        flex: 1;
     }
 }
 
@@ -24,12 +34,26 @@
         font-size: 18px;
         font-weight: 500;
     }
+    .division-1 {
+        flex: 1;
+    }
+    .division-2 {
+        flex: 3;
+    }
+    .division-3 {
+        flex: 1;
+    }
+    .division-4 {
+        flex: 1;
+    }
 }
 
 .box-card {
     width: 250px;
+    height: 250px;
     display: flex;
     background-color: white;
+    cursor: pointer;
     img {
         width: 180px;
         height: 180px;
@@ -37,6 +61,21 @@
     h2 {
         font-size: 18px;
         font-weight: 500;
+    }
+    .division-1 {
+        flex: 5;
+        margin-top: 25px;
+        transition: all 0.3s;
+    }
+    .division-1:hover {
+        transform: scale(1.1);
+    }
+    .division-2 {
+        flex: 1;
+        transition: all 0.3s;
+    }
+    .division-2:hover {
+        transform: scale(1.1);
     }
 }
 
