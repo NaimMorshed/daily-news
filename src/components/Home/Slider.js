@@ -9,7 +9,7 @@ const Slider = () => {
                     <Heading />
                     <Body />
                 </div>
-                <div className="slider-2">
+                <div>
                     <Author />
                 </div>
             </section>

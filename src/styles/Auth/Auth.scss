@@ -1,0 +1,15 @@
+$bgImg: "https://ma-hub.imgix.net/wp-images/2020/07/21183139/Video-Effects-News-Background.jpg";
+
+.parent {
+    background-image: url($bgImg);
+    height: 92.5vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: inset 0 0 0 2000px #06121ade;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

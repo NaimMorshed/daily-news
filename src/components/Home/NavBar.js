@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { UserContext } from '../../App';
 
 const Classes = {
     root: "bg-white flex justify-between p-5",
@@ -11,6 +13,9 @@ const Classes = {
 }
 
 const NavBar = () => {
+    // eslint-disable-next-line no-unused-vars
+    const [auth, setAuth, nav, setNav] = useContext(UserContext);
+
     return (
         <div className={Classes.root}>
             <section>
@@ -20,14 +25,24 @@ const NavBar = () => {
                 </span>
             </section>
             <section>
-                <span className={Classes.navItems}>Home</span>
-                <span className={Classes.navItems}>World</span>
-                <span className={Classes.navItems}>Technology</span>
-                <span className={Classes.navItems}>Sport</span>
-                <span className={Classes.navItems}>Entertainment</span>
+                <Link to={`/`}>
+                    <span className={Classes.navItems}>Home</span>
+                </Link>
+                <Link to={`/category/World`}>
+                    <span className={Classes.navItems}>World</span>
+                </Link>
+                <Link to={`/category/Technology`}>
+                    <span className={Classes.navItems}>Technology</span>
+                </Link>
+                <Link to={`/category/Sport`}>
+                    <span className={Classes.navItems}>Sport</span>
+                </Link>
+                <Link to={`/category/Entertainment`}>
+                    <span className={Classes.navItems}>Entertainment</span>
+                </Link>
             </section>
             <section>
-                <button className={Classes.buttons}>Login</button>
+                <Link to={`/auth`} className={Classes.buttons}>Login</Link>
                 <button className={Classes.buttons}>Logout</button>
             </section>
         </div>

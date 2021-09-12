@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const NewsCard = ({ props, type }) => {
     return (
@@ -16,27 +17,29 @@ const NewsCard = ({ props, type }) => {
 ////////////////////////////////////////////////////////////////////////
 
 const CardSquare = (props) => {
-    console.log(props);
+    
     return (
-        <main className="flex flex-col square-card mr-2.5 mb-2.5">
-            <section className="relative sec-1">
-                <img src={props.props.img} alt="sample" />
-                <div className="tag bg-red-500">
-                    {props.props.tag}
-                </div>
-            </section>
+        <Link to={`/category/${props.props.tag}`}>
+            <main className="flex flex-col square-card mr-2.5 mb-2.5">
+                <section className="relative sec-1">
+                    <img src={props.props.img} alt="sample" />
+                    <div className="tag bg-red-500">
+                        {props.props.tag}
+                    </div>
+                </section>
 
-            <section className="px-6 py-3 sec-2">
-                <div>
-                    <h2>{props.props.heading}</h2>
-                </div>
-            </section>
+                <section className="px-6 py-3 sec-2">
+                    <div>
+                        <h2>{props.props.heading}</h2>
+                    </div>
+                </section>
 
-            <section className="flex justify-center align-center sec-3">
-                <CalendarIcon />
-                <p><small>{props.props.date}</small></p>
-            </section>
-        </main>
+                <section className="flex justify-center align-center sec-3">
+                    <CalendarIcon />
+                    <p><small>{props.props.date}</small></p>
+                </section>
+            </main>
+        </Link>
     );
 }
 

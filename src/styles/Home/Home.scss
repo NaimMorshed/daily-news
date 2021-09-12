@@ -2,7 +2,7 @@ $img: "https://www.incimages.com/uploaded_files/image/1920x1080/getty_520700958_
 
 .slider-bg {
     background-image: url($img);
-    min-height: 80vh;
+    height: 80vh;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100%;
@@ -11,10 +11,7 @@ $img: "https://www.incimages.com/uploaded_files/image/1920x1080/getty_520700958_
 }
 
 .slider-1 {
-    flex: 4;
-}
-.slider-2 {
-    flex: 1;
+    height: 60vh;
 }
 
 .slider-bg:hover {

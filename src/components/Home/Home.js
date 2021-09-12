@@ -1,17 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import '../../styles/Home/Home.css'
+import { UserContext } from '../../App';
 import BreakingNews from './BreakingNews';
 import Category from './Category';
-import NavBar from './NavBar';
 import Popular from './Popular';
 import Slider from './Slider';
 import TopNews from './TopNews';
-//grid gap-7 grid-cols-2
 
 const Home = () => {
+    const [auth, setAuth, nav, setNav] = useContext(UserContext);
+
+    React.useEffect(() => {
+        setNav("Home");
+    }, [])
+
     return (
         <div>
-            <NavBar />
             <Slider />
             <BreakingNews />
             <Category />
