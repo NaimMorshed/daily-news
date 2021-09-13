@@ -8,10 +8,12 @@ import Slider from './Slider';
 import TopNews from './TopNews';
 
 const Home = () => {
-    const [auth, setAuth, nav, setNav] = useContext(UserContext);
+    // eslint-disable-next-line no-unused-vars
+    const [user, setUser, nav, setNav] = useContext(UserContext);
 
     React.useEffect(() => {
         setNav("Home");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (

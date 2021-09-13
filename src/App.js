@@ -1,6 +1,7 @@
 import './styles/App/App.css';
 import { createContext, useState } from 'react';
 import Home from './components/Home/Home';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,7 +13,7 @@ import NavBar from './components/Home/NavBar';
 export const UserContext = createContext();
 
 const App = () => {
-  const [auth, setAuth] = useState({
+  const [user, setUser] = useState({
     status: false,
     email: '',
     name: '',
@@ -21,7 +22,7 @@ const App = () => {
   const [nav, setNav] = useState(null);
 
   return (
-    <UserContext.Provider value={[auth, setAuth, nav, setNav]}>
+    <UserContext.Provider value={[user, setUser, nav, setNav]}>
       <Router>
         <NavBar />
         <Switch>
@@ -34,9 +35,9 @@ const App = () => {
             <Auth />
           </Route>
 
-          <Route exact path="/category/:title">
+          <PrivateRoute exact path="/category/:title">
             <NewsCategory />
-          </Route>
+          </PrivateRoute>
 
         </Switch>
       </Router>

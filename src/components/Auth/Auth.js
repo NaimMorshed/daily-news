@@ -2,21 +2,11 @@ import React, { useRef, useContext } from 'react';
 import '../../styles/Auth/Auth.css';
 import { useHistory, useLocation } from 'react-router';
 import { UserContext } from '../../App';
-////////////////////////////////////
-import firebase from "firebase/compat/app";
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-
-import firebaseConfig from '../../config/firebaseConfig';
-
-if (!firebase.apps.length)
-    firebase.initializeApp(firebaseConfig);
-else
-    firebase.app();
-////////////////////////////////////
+import { auth, provider, signInWithPopup } from '../../config/firebase';
 
 const Auth = () => {
     // eslint-disable-next-line no-unused-vars
-    const [auth, setAuth, nav, setNav] = useContext(UserContext);
+    const [user, setUser, nav, setNav] = useContext(UserContext);
     const history = useHistory();
     const location = useLocation();
     const { from } = location.state || { from: { pathname: "/" } };
@@ -28,23 +18,18 @@ const Auth = () => {
         event.preventDefault();
     }
 
-    const googleClick = () => {
-        const auth = getAuth();
-        auth.languageCode = 'it';
-
-        const provider = new GoogleAuthProvider();
-        provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
-        provider.setCustomParameters({
-            'login_hint': 'user@example.com'
-        });
-
-        signInWithPopup(auth, provider)
-            .then((result) => {
-                const user = result.user;
-                console.log(user);
-            }).catch((error) => {
-                const errorMessage = error.message;
-                console.log(errorMessage);
+    const googleSignIn = () => {
+        signInWithPopup(auth, provider.google)
+            .then(result => {
+                setUser({
+                    status: true,
+                    email: result.user.email,
+                    name: result.user.displayName,
+                    photo: result.user.photoURL
+                })
+                history.replace(from);
+            }).catch(error => {
+                alert(error.message)
             });
     }
 
@@ -86,7 +71,7 @@ const Auth = () => {
                     </div>
                 </section>
                 <section className="bg-gray-300 p-2 mt-3 rounded">
-                    <button onClick={googleClick} className="w-full">Google</button>
+                    <button onClick={googleSignIn} className="w-full">Google</button>
                 </section>
             </div>
         </div>

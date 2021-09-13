@@ -14,7 +14,7 @@ const Classes = {
 
 const NavBar = () => {
     // eslint-disable-next-line no-unused-vars
-    const [auth, setAuth, nav, setNav] = useContext(UserContext);
+    const [user, setUser, nav, setNav] = useContext(UserContext);
 
     return (
         <div className={Classes.root}>

@@ -11,7 +11,12 @@ const Category = () => {
             </header>
             <section className="flex flex-wrap">
                 {
-                    data.map(data => <NewsCard props={data} type={"CardSquare"} />)
+                    data.map(data =>
+                        <NewsCard
+                            key={data.heading}
+                            props={data}
+                            type={"CardSquare"}
+                        />)
                 }
             </section>
         </div>

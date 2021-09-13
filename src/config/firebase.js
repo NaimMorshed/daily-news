@@ -1,12 +1,16 @@
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth';
-import firebaseConfig from './firebaseConfig';
+import firebase from "firebase/compat/app";
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import firebaseConfig from './config';
 
-const Firebase = firebase.initializeApp(firebaseConfig.firebase);
+if (!firebase.apps.length)
+    firebase.initializeApp(firebaseConfig);
+else
+    firebase.app();
 
-export const Providers = {
-    google: new firebase.auth.GoogleAuthProvider()
+
+const auth = getAuth();
+const provider = {
+    google: new GoogleAuthProvider(),
 }
 
-export const auth = firebase.auth();
-export default Firebase;
+export { auth, provider, signInWithPopup };

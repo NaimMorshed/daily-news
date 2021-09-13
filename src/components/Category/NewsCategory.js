@@ -7,11 +7,11 @@ import { data } from '../Home/data';
 const NewsCategory = () => {
     const { title } = useParams();
     // eslint-disable-next-line no-unused-vars
-    const [auth, setAuth, nav, setNav] = useContext(UserContext);
-    
+    const [user, setUser, nav, setNav] = useContext(UserContext);
+
     React.useEffect(() => {
         setNav(title)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (
@@ -21,7 +21,8 @@ const NewsCategory = () => {
             </header>
             <section className="flex flex-wrap">
                 {
-                    data.map(data => data.tag === title && <NewsCard props={data} type={"CardSquare"} />)
+                    data.map(data => data.tag === title &&
+                        <NewsCard key={data.heading} props={data} type={"CardSquare"} />)
                 }
             </section>
         </div>
