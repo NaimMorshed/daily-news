@@ -16,6 +16,7 @@ const Auth = () => {
 
     const submit = event => {
         event.preventDefault();
+        alert("Under development");
     }
 
     const googleSignIn = () => {

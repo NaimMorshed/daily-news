@@ -1,6 +1,7 @@
 import './styles/App/App.css';
 import { createContext, useState } from 'react';
 import Home from './components/Home/Home';
+import Profile from './components/Profile/Profile';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import {
   BrowserRouter as Router,
@@ -33,6 +34,10 @@ const App = () => {
 
           <Route exact path="/auth">
             <Auth />
+          </Route>
+
+          <Route exact path="/profile">
+            <Profile />
           </Route>
 
           <PrivateRoute exact path="/category/:title">
